@@ -57,7 +57,7 @@ public class Main {
         }
 
         while (true) {
-            System.out.println("Выберите желаемое действие с матрицей");
+            System.out.println("Выберите действие");
             System.out.println("1. Повернуть матрицу на 90 градусов");
             System.out.println("2. Повернуть матрицу на 180 градусов");
             System.out.println("3. Повернуть матрицу на 270 градусов");
