@@ -8,6 +8,15 @@ public class Main {
     public static Random random = new Random();
     public static Scanner scanner = new Scanner(System.in);
 
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                System.out.format("%4d", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
     public static void rotate90() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -32,14 +41,6 @@ public class Main {
         }
     }
 
-    public static void result() {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                System.out.format("%4d", rotatedColors[i][j]);
-            }
-            System.out.println();
-        }
-    }
 
     public static void main(String[] args) {
         for (int i = 0; i < SIZE; i++) {
@@ -47,17 +48,11 @@ public class Main {
                 colors[i][j] = random.nextInt(256);
             }
         }
-
         System.out.println("Дана следующая матрица:");
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                System.out.format("%4d", colors[i][j]);
-            }
-            System.out.println();
-        }
+        printMatrix(colors);
 
         while (true) {
-            System.out.println("Выберите действие");
+            System.out.println("Выберите желаемое действие с матрицей");
             System.out.println("1. Повернуть матрицу на 90 градусов");
             System.out.println("2. Повернуть матрицу на 180 градусов");
             System.out.println("3. Повернуть матрицу на 270 градусов");
@@ -72,19 +67,19 @@ public class Main {
                 case 1:
                     rotate90();
                     System.out.println("Матрица после поворота на 90 градусов:");
-                    result();
+                    printMatrix(rotatedColors);
                     break;
 
                 case 2:
                     rotate180();
                     System.out.println("Матрица после поворота на 180 градусов:");
-                    result();
+                    printMatrix(rotatedColors);
                     break;
 
                 case 3:
                     rotate270();
                     System.out.println("Матрица после поворота на 270 градусов:");
-                    result();
+                    printMatrix(rotatedColors);
                     break;
 
                 default:
